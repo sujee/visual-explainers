@@ -1,0 +1,26 @@
+# Generated output and scratch: previews, exports, build files (see AGENTS.md)
+workspace/
+
+# Dependencies and environments
+node_modules/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Tool caches, and Manim's default output folder (if run without --media_dir)
+.cache/
+explainers/*/media/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
