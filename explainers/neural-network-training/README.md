@@ -13,7 +13,7 @@ The intent (what it teaches, for whom, and what must come across) is in [brief.m
 
 ```bash
 sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg sox fonts-inter   # Debian/Ubuntu (tested)
-brew install cairo pango pkg-config ffmpeg sox && brew install --cask font-inter          # macOS (untested)
+brew install cairo pango pkg-config ffmpeg sox && brew install --cask font-inter          # macOS (tested)
 ```
 
 ## Run it yourself
