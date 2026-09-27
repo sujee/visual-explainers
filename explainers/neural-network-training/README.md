@@ -6,6 +6,8 @@ The intent (what it teaches, for whom, and what must come across) is in [brief.m
 
 ▶ Watch the finished explainer: [video](https://youtu.be/BJC3FuMHRvs) · [Short](https://youtube.com/shorts/0fBcojHo-SI) · Download the 4K masters: [release](https://github.com/sujee/visual-explainers/releases/tag/neural-network-training-v1)
 
+Also in a cartoon style, with the same story and animation: [neural-network-training-cartoon](../neural-network-training-cartoon/).
+
 ## Prerequisites
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/). It installs Python 3.11 and the pinned packages itself.

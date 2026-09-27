@@ -47,3 +47,4 @@ All the videos are in one [YouTube playlist](https://www.youtube.com/playlist?li
 | Explainer | What it teaches | Watch | Built with |
 |---|---|---|---|
 | [neural-network-training](explainers/neural-network-training/) | How a network learns from its mistakes: forward pass, error, backpropagation, weight updates | [Video](https://youtu.be/BJC3FuMHRvs) · [Short](https://youtube.com/shorts/0fBcojHo-SI) | Manim (Python) |
+| [neural-network-training-cartoon](explainers/neural-network-training-cartoon/) | The same explainer in a bright cartoon style, with a bouncy soundtrack | Not published yet | Manim (Python) |
