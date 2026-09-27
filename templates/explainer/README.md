@@ -21,13 +21,9 @@ The intent (what it teaches, for whom, and what must come across) is in [brief.m
 
 ## Customize
 
-- Edit `brief.md` and ask your coding agent to adapt the explainer.
-- For a small tweak, skip the brief: edit the source directly and run `./render.sh draft <next version>`. <Name the main source files.>
+- **Through the brief:** edit `brief.md` (e.g. <an example change and the brief section it goes under>), then ask your agent to *update the explainer and render a draft*. Give notes on each draft until you approve one, then render it at final quality: `./render.sh final <version>`.
+- **Directly:** edit <the main source files>, then run `./render.sh draft <next version>`.
 
-To change it through the brief:
-1. Edit `brief.md`, e.g. <an example change and the brief section it goes under>.
-2. Ask your agent: *"I updated brief.md. Update the explainer to match and render a draft."*
-3. Review the draft in `workspace/preview/vN/` and give notes; each round bumps the version (vN+1, …).
-4. Once you approve a version, render it at final quality: `./render.sh final vN`.
+## Verification
 
-Once you're happy with a version, ask the agent to *prepare the Repro Bundle* before committing.
+Before committing, ask your agent for the *fresh-clone test* (or *repro test*): it renders from a copy of only the files Git tracks and checks that the output matches the approved version. It takes one full final render.
