@@ -4,7 +4,7 @@ Open-source, reproducible visual explainers for AI, software, and technical conc
 
 **Watch them. Reproduce them. Remix them.**
 
-### [▶ Browse the explainers](#explainers) · [Reproduce one](#explore-and-reproduce-an-explainer) · [Create your own](#create-a-new-explainer)
+### [▶ Watch on YouTube](https://www.youtube.com/playlist?list=PLf-uOqpJCluE) · [Browse the explainers](#explainers) · [Reproduce one](#explore-and-reproduce-an-explainer) · [Create your own](#create-a-new-explainer)
 
 Working with a coding agent? The rules it follows are in [AGENTS.md](AGENTS.md).
 
@@ -41,6 +41,8 @@ It starts by writing a `brief.md` for you to review, then renders drafts (`v1`, 
 Or start by hand: copy [`templates/explainer/`](templates/explainer/) to `explainers/<name>/` and fill in the placeholders.
 
 ## Explainers
+
+All the videos are in one [YouTube playlist](https://www.youtube.com/playlist?list=PLf-uOqpJCluE).
 
 | Explainer | What it teaches | Watch | Built with |
 |---|---|---|---|
