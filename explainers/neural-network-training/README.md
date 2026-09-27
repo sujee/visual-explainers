@@ -19,7 +19,7 @@ brew install cairo pango pkg-config ffmpeg sox && brew install --cask font-inter
 ## Run it yourself
 
 ```bash
-./render.sh             # → workspace/preview/<timestamp>/  (4K landscape ~1:55 + Short ~0:57, with and without music)
+./render.sh             # → workspace/preview/<timestamp>/  (4K landscape ~1:55 + Short ~0:59, with and without music)
 ./render.sh v7 draft    # quick 720p draft → workspace/preview/v7/
 ```
 

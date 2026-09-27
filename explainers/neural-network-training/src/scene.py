@@ -700,9 +700,9 @@ class NeuralNet(Scene):
             footer.next_to(end, DOWN, buff=0.9)
         else:
             footer.move_to(DOWN * 3.45)
-        self.play(FadeIn(end, shift=UP * 0.1), FadeIn(footer), run_time=T(0.8))
-        self.wait(1.4 if not PORTRAIT else 0.8)
-        self.play(FadeOut(end), FadeOut(footer), run_time=0.8 if not PORTRAIT else 0.5)
+        self.play(FadeIn(end, shift=UP * 0.1), FadeIn(footer), run_time=T(0.8) if not PORTRAIT else 0.8)
+        self.wait(1.4 if not PORTRAIT else 2.2)
+        self.play(FadeOut(end), FadeOut(footer), run_time=0.8)
         self.mark("end")
         out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "workspace", "tmp")
         os.makedirs(out, exist_ok=True)
