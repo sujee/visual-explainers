@@ -16,6 +16,8 @@ sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg sox   # 
 brew install cairo pango pkg-config ffmpeg sox   # macOS (tested)
 ```
 
+The display fonts (Luckiest Guy, Comic Neue) are bundled in `assets/fonts/` with their licence files, so no font has to be installed on the machine.
+
 ## Run it yourself
 
 ```bash

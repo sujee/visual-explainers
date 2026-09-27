@@ -16,7 +16,7 @@ Curious non-experts. No math.
 
 ## Style
 Simpson's cartoon style. Motion should explain, not decorate. Plain-language captions.
-Music: Bouncy, cartoon style music
+Music: bouncy, cartoon style.
 
 ## Constraints
 - Show the mistakes: at least two wrong guesses before the right one.
