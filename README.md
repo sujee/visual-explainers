@@ -44,4 +44,4 @@ Or start by hand: copy [`templates/explainer/`](templates/explainer/) to `explai
 
 | Explainer | What it teaches | Watch | Built with |
 |---|---|---|---|
-| [neural-network-training](explainers/neural-network-training/) | How a network learns from its mistakes: forward pass, error, backpropagation, weight updates | *coming soon* | Manim (Python) |
+| [neural-network-training](explainers/neural-network-training/) | How a network learns from its mistakes: forward pass, error, backpropagation, weight updates | [Video](https://youtu.be/BJC3FuMHRvs) · [Short](https://youtube.com/shorts/0fBcojHo-SI) | Manim (Python) |
