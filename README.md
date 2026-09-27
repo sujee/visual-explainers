@@ -38,6 +38,8 @@ Start a coding agent in the repository root (the new explainer's folder doesn't 
 
 It starts by writing a `brief.md` for you to review, then renders drafts (`v1`, `v2`, …) for your feedback. Once you approve a version, ask it to *prepare the Repro Bundle* before committing.
 
+Or start by hand: copy [`templates/explainer/`](templates/explainer/) to `explainers/<name>/` and fill in the placeholders.
+
 ## Explainers
 
 | Explainer | What it teaches | Watch | Built with |

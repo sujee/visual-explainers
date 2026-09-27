@@ -24,41 +24,17 @@ explainers/<explainer-name>/
 ├── <manifest + lockfile>    ← dependencies, declared and locked
 ├── render.sh
 ├── .gitignore               ← optional, for project-specific ignores (the root one covers the rest)
+├── TOKENS.md                ← optional: token usage and cost (see Iteration Workflow)
 └── workspace/               ← git-ignored: previews, exports, scratch
 ```
 
 Use the ecosystem's manifest and lockfile, e.g. `package.json` + `package-lock.json`, or `pyproject.toml` + `uv.lock` + `.python-version` for Python (run everything through `uv run`; no global or `pip` installs). Pick the technology that suits the explainer; don't force a framework for consistency.
 
-`README.md` is the entry point for people and agents. Keep it short and use this structure:
+Start a new explainer by copying [`templates/explainer/`](templates/explainer/) to `explainers/<explainer-name>/` and filling in the `<placeholders>`:
 
-````markdown
-# <Title>
-
-<One sentence: what the explainer teaches.>
-
-The intent (what it teaches, for whom, and what must come across) is in [brief.md](brief.md). The approved implementation is in `src/`.
-
-▶ Watch the finished explainer: <link, or *(coming soon)*>
-
-## Prerequisites
-
-<Only what the lockfile can't install: the package manager, system packages, fonts. Exact commands, with the tested OS noted.>
-
-## Run it yourself
-
-```bash
-./render.sh            # → workspace/preview/<timestamp>/  (<what the final deliverables are>)
-./render.sh draft      # <what a draft produces>  → workspace/preview/<timestamp>/
-./render.sh draft v2   # same, named version      → workspace/preview/v2/
-./render.sh final v2   # everything, final quality → workspace/preview/v2/
-```
-
-## Customize
-
-Edit `brief.md` and ask your coding agent to adapt the explainer, or modify the source directly: <name the main source files>. Once you're happy with a version, ask the agent to *prepare the Repro Bundle* before committing.
-````
-
-Prefer commands over prose.
+- `brief.md`: write it first (see Iteration Workflow).
+- `README.md`: the entry point for people and agents. Keep its structure and keep it short; prefer commands over prose.
+- `render.sh`: the Render Interface below (arguments, output folders, file names, with and without music) is already in place. Fill in the TODOs: installing dependencies, rendering the video and rendering the music.
 
 ## Reproducibility
 
@@ -138,7 +114,7 @@ prefill-vs-decode-v5-9x16-4k.mp4
 
 ## Iteration Workflow
 
-1. For a new explainer, write `brief.md` first and get it reviewed. Then render drafts as named versions (`v1`, `v2`, …) at draft quality.
+1. For a new explainer, copy `templates/explainer/`, write `brief.md` first and get it reviewed. Then render drafts as named versions (`v1`, `v2`, …) at draft quality.
 2. Before presenting a draft, check rendered frames yourself — overlapping or clipped text, leftover elements, layout, timing — and fix what you find.
 3. The human reviews, usually with timestamped notes ("0:45: the caption overlaps the chart").
 4. Apply the notes, bump the version, and log what changed in `workspace/preview/NOTES.md` (a local work log, not committed). Drafts are not committed; Git records approved versions, one commit each.
