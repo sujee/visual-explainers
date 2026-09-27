@@ -47,8 +47,10 @@ The intent (what it teaches, for whom, and what must come across) is in [brief.m
 ## Run it yourself
 
 ```bash
-./render.sh             # → workspace/preview/<timestamp>/  (<what the final deliverables are>)
-./render.sh v2 draft    # <what a draft produces> → workspace/preview/v2/
+./render.sh            # → workspace/preview/<timestamp>/  (<what the final deliverables are>)
+./render.sh draft      # <what a draft produces>  → workspace/preview/<timestamp>/
+./render.sh draft v2   # same, named version      → workspace/preview/v2/
+./render.sh final v2   # everything, final quality → workspace/preview/v2/
 ```
 
 ## Customize
@@ -70,20 +72,22 @@ A fresh clone must reproduce the approved explainer: enter the explainer directo
 ## Render Interface
 
 ```bash
-./render.sh [version] [quality]
+./render.sh [quality] [version]
 ```
 
 Plain `./render.sh` must render every deliverable at final quality — reproducing an explainer should never require learning its parameters.
 
-- `version`: the preview directory, `workspace/preview/<version>/`. Use `v1`, `v2`, … for review iterations; when omitted, use a `YYYY-MM-DD_HHMMSS` timestamp.
 - `quality`: draft or final (default). A draft is fast and may render only the main format.
+- `version`: the preview directory, `workspace/preview/<version>/`. Use `v1`, `v2`, … for review iterations; when omitted, use a `YYYY-MM-DD_HHMMSS` timestamp.
 - After each render, point `workspace/preview/latest` at the new directory.
 - Document the accepted quality values in `README.md`.
+- **Ask before rendering when quality is ambiguous.** A final render takes a long time (4K, every format). If a request like "render it", "produce the video" or "run it" doesn't say draft or final, ask which one before starting. Don't ask when it's explicit ("final render", "draft v3", `./render.sh draft v5`).
 
 ```bash
-./render.sh             # everything, final quality → workspace/preview/2026-09-26_145210/
-./render.sh v3 draft    # quick draft for review    → workspace/preview/v3/
-./render.sh v5          # everything, final quality → workspace/preview/v5/
+./render.sh            # everything, final quality → workspace/preview/2026-09-26_145210/
+./render.sh draft      # quick draft for review    → workspace/preview/2026-09-26_150102/
+./render.sh draft v3   # quick draft for review    → workspace/preview/v3/
+./render.sh final v5   # everything, final quality → workspace/preview/v5/
 ```
 
 ## Deliverables

@@ -1,21 +1,24 @@
 #!/usr/bin/env bash
 # Render the explainer. Output goes to workspace/preview/<version>/ (see README.md).
 #
+#   ./render.sh [quality] [version]
+#
 #   ./render.sh              all deliverables, final quality -> workspace/preview/<timestamp>/
-#   ./render.sh v6           all deliverables, final quality -> workspace/preview/v6/
-#   ./render.sh v6 draft     quick 720p landscape draft      -> workspace/preview/v6/
+#   ./render.sh draft        quick 720p draft, both formats  -> workspace/preview/<timestamp>/
+#   ./render.sh draft v6     quick 720p draft, both formats  -> workspace/preview/v6/
+#   ./render.sh final v6     all deliverables, final quality -> workspace/preview/v6/
 #
 # final: 16:9 3840x2160 + 9:16 2160x3840, 30 fps, each with music and silent.
 set -euo pipefail
 cd "$(dirname "$0")"
 
 NAME=neural-network-training
-VER=${1:-$(date +%Y-%m-%d_%H%M%S)}
-QUALITY=${2:-final}
+QUALITY=${1:-final}
+VER=${2:-$(date +%Y-%m-%d_%H%M%S)}
 case $QUALITY in
   final) MANIM_Q=(-qk --frame_rate 30); RES=4k;   ORIENTS=(landscape portrait) ;;
-  draft) MANIM_Q=(-qm);                 RES=720p; ORIENTS=(landscape) ;;
-  *) echo "quality must be 'draft' or 'final'" >&2; exit 1 ;;
+  draft) MANIM_Q=(-qm);                 RES=720p; ORIENTS=(landscape portrait) ;;
+  *) echo "usage: ./render.sh [draft|final] [version]  (quality comes first)" >&2; exit 1 ;;
 esac
 
 OUT=workspace/preview/$VER
@@ -41,9 +44,9 @@ for o in "${ORIENTS[@]}"; do
   base=$OUT/$NAME-$VER-$aspect-$RES
   ffmpeg -v error -y -i "$src" -c:v libx264 -preset slow -crf 16 -pix_fmt yuv420p -movflags +faststart \
     "$base-silent.mp4"
-  uv run --frozen python src/music.py "$TMP/events_$o.json" "$TMP/music_$o.wav"
+  uv run --frozen python src/music.py "$TMP/events_$o.json" "$TMP/music_$o.wav"   # normalized to -14 LUFS
   ffmpeg -v error -y -i "$base-silent.mp4" -i "$TMP/music_$o.wav" -map 0:v -map 1:a \
-    -c:v copy -c:a aac -b:a 256k -shortest -movflags +faststart "$base.mp4"
+    -c:v copy -af apad -c:a aac -b:a 256k -shortest -movflags +faststart "$base.mp4"
 done
 
 ln -sfn "$VER" workspace/preview/latest

@@ -20,7 +20,8 @@ Each explainer is self-contained.
 git clone https://github.com/sujee/visual-explainers.git
 cd visual-explainers/explainers/neural-network-training
 # install the prerequisites listed in its README.md, then:
-./render.sh
+./render.sh          # all deliverables, final quality (4K, takes a while)
+./render.sh draft    # quick draft preview
 ```
 
 **With a coding agent:** start it in the explainer's folder (or the repository root) and ask:
