@@ -38,7 +38,7 @@ Start a new explainer by copying [`templates/explainer/`](templates/explainer/) 
 
 ## Reproducibility
 
-A fresh clone must reproduce the approved explainer: enter the explainer directory, install the documented dependencies, run `./render.sh`, get the deliverables.
+A fresh clone must reproduce the approved explainer: enter the explainer directory, install the documented dependencies, run `./render.sh`, get the deliverables. The Repro Bundle's fresh-clone test (below) checks this.
 
 - Declare and lock all dependencies. Document any unavoidable system requirements (e.g. ffmpeg, fonts) in `README.md`; don't rely on undocumented global tools.
 - Renders must be deterministic: seed all randomness (layouts, weights, noise, generated music), and fetch nothing from the network at render time.
@@ -120,6 +120,7 @@ prefill-vs-decode-v5-9x16-4k.mp4
 4. Apply the notes, bump the version, and log what changed in `workspace/preview/NOTES.md` (a local work log, not committed). Drafts are not committed; Git records approved versions, one commit each.
 5. Stop at drafts. Render final quality only after the human explicitly approves a version.
 6. When the human approves a version, offer to prepare the Repro Bundle (below), so they don't need to know to ask.
+7. Before committing changes to an explainer, or when the human asks to commit or whether to commit, check that the fresh-clone test (below) has passed on the files being committed. If it hasn't, or anything that affects the render (sources, assets, dependencies, `render.sh`) changed since it ran, ask the human whether to run it first — it takes a full final render. Commit without it only if they say so.
 
 Optional: if you can measure your own usage, record tokens and cost across all iterations in `TOKENS.md`.
 
@@ -131,7 +132,7 @@ Once approved, turn the explainer directory into a **Repro Bundle**:
 2. Check that sources, assets, dependencies, lockfiles and `.gitignore` are complete; remove unused and temporary files.
 3. Make `README.md` match the actual workflow.
 4. Check that `brief.md` still captures the intent without becoming a scene-by-scene script.
-5. From a clean environment (e.g. a fresh clone, or a copy of only the files Git would track), run the install steps and `./render.sh` with no arguments. Confirm every deliverable is produced and matches the approved version (compare frames and duration).
+5. Run the **fresh-clone test**: in a fresh clone, or a copy of only the files Git would track, run the install steps and `./render.sh` with no arguments. Confirm every deliverable is produced and matches the approved version (compare frames and duration).
 6. Fix any problem you find. Don't state that reproduction should work — test it.
 
 When finished, report: files to commit, files that must not be committed, the exact commands to reproduce, and any remaining external requirements or limitations.

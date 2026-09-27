@@ -1,6 +1,6 @@
 # Visual Explainers
 
-Open-source, reproducible visual explainers for AI and software concepts.
+Open-source, reproducible visual explainers for AI, software, and technical concepts.
 
 **Watch them. Reproduce them. Remix them.**
 
