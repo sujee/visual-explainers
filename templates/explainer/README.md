@@ -4,6 +4,8 @@
 
 The intent (what it teaches, for whom, and what must come across) is in [brief.md](brief.md). The approved implementation is in `src/`.
 
+Working with a coding agent? The house rules are in [AGENTS.md](../../AGENTS.md) at the repository root: read it first.
+
 ▶ Watch the finished explainer: <link, or *(coming soon)*>
 
 ## Prerequisites

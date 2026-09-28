@@ -4,6 +4,8 @@ A visual explainer of how a neural network learns from its mistakes: forward pas
 
 The intent (what it teaches, for whom, and what must come across) is in [brief.md](brief.md). The approved implementation is in `src/`.
 
+Working with a coding agent? The house rules are in [AGENTS.md](../../AGENTS.md) at the repository root: read it first.
+
 ▶ Watch the finished explainer: [video](https://youtu.be/11BqOZ9HJeY) · Download the 4K masters: [release](https://github.com/sujee/visual-explainers/releases/tag/neural-network-training-cartoon-v1)
 
 Same story and animation as [neural-network-training](../neural-network-training/), in a different visual and musical style. Compare the two `brief.md` files to see what changed.
