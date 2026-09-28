@@ -21,5 +21,8 @@
 ## Deliverables
 The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables). <Or state how they differ, e.g. "16:9 only, no Short.">
 
+## Credit
+End card: **Created by <your name or site>**. Short and understated. Delete this section for no credit.
+
 ## Creative freedom
 You choose the visuals, story and pacing. This is a set of goals, not a scene-by-scene script.

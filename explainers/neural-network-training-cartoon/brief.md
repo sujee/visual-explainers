@@ -25,5 +25,8 @@ Music: bouncy, cartoon style.
 ## Deliverables
 The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables)
 
+## Credit
+End card: **Created by sujee.dev**. Short and understated.
+
 ## Creative freedom
 You choose the visuals, story and pacing. This is a set of goals, not a scene-by-scene script.

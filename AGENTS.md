@@ -8,7 +8,7 @@ Each explainer is a self-contained project that anyone — a developer, CI, or a
 
 ## Core Principles
 
-1. **Start at the explainer's `README.md`, then its brief.** The README says how to run it and points to `brief.md`, which uses the headings Goal / Audience / Must communicate / Style / Constraints / Deliverables / Creative freedom. Deliverables either points to the defaults in this file or states how they differ; Creative freedom is one line, so the brief still works if it's handed to an agent on its own. A brief deliberately does not prescribe scenes.
+1. **Start at the explainer's `README.md`, then its brief.** The README says how to run it and points to `brief.md`, which uses the headings Goal / Audience / Must communicate / Style / Constraints / Deliverables / Credit / Creative freedom. Deliverables either points to the defaults in this file or states how they differ; Credit gives the end-card text; Creative freedom is one line, so the brief still works if it's handed to an agent on its own. A brief deliberately does not prescribe scenes.
 2. **Exercise creative freedom.** Treat the brief as goals, not a script. You decide the visual metaphors, story, structure, animation, pacing, typography, and layout. Prefer visuals over text, and don't ask the user to specify every creative decision.
 3. **The source is the final storyboard.** No separate scene-by-scene script unless an explainer truly needs one. `brief.md` captures intent, the approved source captures the final creative decisions, and Git captures their evolution.
 4. **Be agent-agnostic.** Don't depend on previous conversations, hidden prompts, agent-specific context (Claude, OpenCode, Hermes, …), or files outside the project.
@@ -77,7 +77,7 @@ Unless `brief.md` says otherwise:
 
 - **Vertical:** recompose the layout rather than cropping the 16:9 version; share content and animation logic where practical. Aim for 40–60 seconds (best practice, not a hard limit — YouTube Shorts allow up to 3 minutes). Keep text and key visuals clear of the platform UI: roughly the bottom 15% and the right edge.
 - **Audio:** produce each video with music and silent (for remixers adding voiceover or their own track). Music must be original or redistributable; generating it deterministically in code is a good default. Normalize to about −14 LUFS integrated, true peak ≤ −1 dBTP.
-- **Attribution:** end original explainers with a short, understated card: **Created by sujee.dev**. Keep it easy for remixers to change or remove; don't add technical measures to enforce it.
+- **Attribution:** end with a short, understated card showing the credit from the brief's **Credit** section (for the original explainers here, **Created by sujee.dev**). No Credit section, no card. Keep it easy for remixers to change or remove; don't add technical measures to enforce it.
 
 ## Workspace and Output
 
