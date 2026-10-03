@@ -54,6 +54,11 @@ for f in "${FORMATS[@]}"; do
   render_music "$f" "$TMP/music_$f.wav"
   ffmpeg -v error -y -i "$base-silent.mp4" -i "$TMP/music_$f.wav" -map 0:v -map 1:a \
     -c:v copy -af apad -c:a aac -b:a 256k -shortest -movflags +faststart "$base.mp4"
+  if [[ $QUALITY == final ]]; then   # 1080p copy for social posts; delete this block if the brief doesn't ask for one
+    hd=1920:1080; [[ $f == 9x16 ]] && hd=1080:1920
+    ffmpeg -v error -y -i "$base.mp4" -vf "scale=$hd:flags=lanczos" -c:v libx264 -preset slow -crf 18 \
+      -pix_fmt yuv420p -c:a copy -movflags +faststart "$OUT/$NAME-$VER-$f-1080p.mp4"
+  fi
 done
 
 render_thumbnails

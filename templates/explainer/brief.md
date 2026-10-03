@@ -25,6 +25,7 @@
 ## Deliverables
 - Landscape 16:9, about <2 minutes>.
 - Short 9:16, about <40–60 seconds>: <a condensed version of the full story, or a standalone cut of one idea>. <Delete this line for no Short.>
+- 1080p copies of the videos (with music) for posting directly on social media (X, LinkedIn, Bluesky). <Delete this line if not needed.>
 - YouTube publishing guide: upload steps and a description for each video, with chapter timestamps. <Delete this line if not needed.>
 - YouTube thumbnails: <a few designs> for each video. <Delete this line if not needed.>
 

@@ -47,6 +47,11 @@ for o in "${ORIENTS[@]}"; do
   uv run --frozen python src/music.py "$TMP/events_$o.json" "$TMP/music_$o.wav"   # normalized to -14 LUFS
   ffmpeg -v error -y -i "$base-silent.mp4" -i "$TMP/music_$o.wav" -map 0:v -map 1:a \
     -c:v copy -af apad -c:a aac -b:a 256k -shortest -movflags +faststart "$base.mp4"
+  if [[ $QUALITY == final ]]; then   # 1080p copy for posting on X / LinkedIn (they don't play 4K in the feed)
+    hd=1920:1080; [[ $o == portrait ]] && hd=1080:1920
+    ffmpeg -v error -y -i "$base.mp4" -vf "scale=$hd:flags=lanczos" -c:v libx264 -preset slow -crf 18 \
+      -pix_fmt yuv420p -c:a copy -movflags +faststart "$OUT/$NAME-$VER-$aspect-1080p.mp4"
+  fi
 done
 
 # YouTube thumbnails: three designs (see JevThumbnail in src/scene.py), both formats, as stills.

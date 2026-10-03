@@ -28,7 +28,7 @@ From the existing source. This reproduces the approved video exactly.
 
 ```bash
 ./render.sh            # → workspace/preview/<timestamp>/  (4K landscape ~2:05 + Short ~0:36, with and without music,
-                       #    and rewrites thumbnails/ (3 designs per format) and youtube-publishing.md)
+                       #    1080p copies for X/LinkedIn, and rewrites thumbnails/ (3 designs per format) and youtube-publishing.md)
 ./render.sh draft      # quick 720p draft, both formats → workspace/preview/<timestamp>/
 ./render.sh draft v5   # same, named version            → workspace/preview/v5/
 ./render.sh final v5   # everything, final quality      → workspace/preview/v5/
