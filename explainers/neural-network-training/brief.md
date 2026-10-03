@@ -1,10 +1,16 @@
 # How a Neural Network Learns
 
 ## Goal
-Show how a neural network is trained: it looks at a picture of a cat, guesses wrong, learns from the error, and eventually gets it right.
+Show how a neural network is trained.
 
 ## Audience
 Curious non-experts. No math.
+
+## Story
+- The network is shown a picture of a cat.
+- Try 1: it guesses **dog**. Wrong. The error flows back (backpropagation) and adjusts the weights.
+- Try 2: it guesses **rabbit**. Still wrong, so another correction is sent back.
+- Try 3: it guesses **cat**. Correct.
 
 ## Must communicate
 - A network is layers of neurons joined by weighted connections.
@@ -12,20 +18,19 @@ Curious non-experts. No math.
 - Forward pass: the signal flows through and scores each class; the highest score is the guess.
 - Error (loss): how wrong the guess was.
 - Backpropagation: the error flows backward and nudges each weight.
-- Training is a loop, repeated over many images.
+- Real training repeats this loop over many images (a brief mention).
 
 ## Style
 Clean, modern, calm. Motion should explain, not decorate. Plain-language captions.
 
 ## Constraints
-- Show the mistakes: at least two wrong guesses before the right one.
 - About 2 minutes; the Short under 60 seconds.
 
 ## Deliverables
-The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables)
+The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables).
 
 ## Credit
 End card: **Created by sujee.dev**. Short and understated.
 
 ## Creative freedom
-You choose the visuals, story and pacing. This is a set of goals, not a scene-by-scene script.
+The story beats are fixed. You choose the visuals, staging and pacing.

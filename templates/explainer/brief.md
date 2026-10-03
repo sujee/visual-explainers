@@ -6,6 +6,11 @@
 ## Audience
 <Who it's for and what they already know, e.g. "Developers who use LLM APIs but not inference internals.">
 
+## Story
+<Optional. The fixed story beats, in order. Delete this section to leave the story open.>
+- <Beat 1, e.g. "The network is shown a picture of a cat.">
+- <Beat 2, e.g. "Try 1: it guesses **dog**. Wrong.">
+
 ## Must communicate
 - <Concept 1>
 - <Concept 2>
@@ -25,4 +30,4 @@ The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables). <Or 
 End card: **Created by <your name or site>**. Short and understated. Delete this section for no credit.
 
 ## Creative freedom
-You choose the visuals, story and pacing. This is a set of goals, not a scene-by-scene script.
+You choose the visuals, story and pacing, within any Story beats above. This is a set of goals, not a scene-by-scene script.

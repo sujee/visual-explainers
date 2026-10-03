@@ -23,8 +23,14 @@ Working with a coding agent? The house rules are in [AGENTS.md](../../AGENTS.md)
 
 ## Customize
 
-- **Through the brief:** edit `brief.md` (e.g. <an example change and the brief section it goes under>), then ask your agent to *update the explainer and render a draft*. Give notes on each draft until you approve one, then render it at final quality: `./render.sh final <version>`.
-- **Directly:** edit <the main source files>, then run `./render.sh draft <next version>`.
+**Option 1: with a coding agent** (Claude Code, Codex, OpenCode, …), started in this directory:
+
+1. **Edit `brief.md`.** Say what you want, not how. E.g. <an example change and the brief section it goes under>.
+2. **Ask for a draft:** *"Update the explainer to match the brief and render a draft."* The agent edits `src/` and renders to `workspace/preview/v1/` (then `v2`, `v3`, …).
+3. **Watch it and give notes**, ideally with timestamps: *"0:45: the caption overlaps the chart."* The agent applies them and renders the next draft. Repeat until you're happy.
+4. **Approve and render final:** *"v3 is approved, render it at final quality"* (or `./render.sh final v3` yourself). This takes a while: <what a final render produces, e.g. 4K, both formats>.
+
+**Option 2: edit the code directly:** <the main source files, and where the most common changes live>, then run `./render.sh draft <next version>`.
 
 ## Verification
 

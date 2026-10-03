@@ -31,8 +31,14 @@ brew install cairo pango pkg-config ffmpeg sox && brew install --cask font-inter
 
 ## Customize
 
-- **Through the brief:** edit `brief.md` (e.g. a color preference under **Style**), then ask your agent to *update the explainer and render a draft*. Give notes on each draft until you approve one, then render it at final quality: `./render.sh final <version>`.
-- **Directly:** edit `src/scene.py` (animation; colors are at the top) or `src/music.py`, then run `./render.sh draft <next version>`.
+**Option 1: with a coding agent** (Claude Code, Codex, OpenCode, …), started in this directory:
+
+1. **Edit `brief.md`.** Say what you want, not how. E.g. change the guesses under **Story**, or add a color preference under **Style**.
+2. **Ask for a draft:** *"Update the explainer to match the brief and render a draft."* The agent edits `src/` and renders to `workspace/preview/v1/` (then `v2`, `v3`, …).
+3. **Watch it and give notes**, ideally with timestamps: *"0:45: the caption overlaps the chart."* The agent applies them and renders the next draft. Repeat until you're happy.
+4. **Approve and render final:** *"v3 is approved, render it at final quality"* (or `./render.sh final v3` yourself). This takes a while: 4K, both formats.
+
+**Option 2: edit the code directly:** `src/scene.py` (animation; colors and the guesses are at the top) or `src/music.py`, then run `./render.sh draft <next version>`.
 
 ## Verification
 
