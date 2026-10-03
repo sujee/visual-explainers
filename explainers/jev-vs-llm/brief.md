@@ -38,7 +38,7 @@ Music: simple, minimal modern piano with a soft, felt-like tone. Slow, level and
 ## Deliverables
 - Landscape 16:9, about 2 minutes.
 - Short 9:16, about 35 seconds: a standalone cut of the core idea, not a condensed version of the full story. Hook in the first seconds, then Jev vs. LLM (section 2), one line on why it matters (fast, and the confidence tells code when to act), and a closing pointer to the full video. No section cards.
-- YouTube description for each video, with chapter timestamps for the landscape video (one chapter per section).
+- YouTube publishing guide: step-by-step upload instructions (full video first, then the Short linking to it) and a description for each video, with chapter timestamps for the landscape video (one chapter per section).
 - YouTube thumbnails: a few designs, each for both videos (16:9 and 9:16), to pick from.
 
 ## Credit

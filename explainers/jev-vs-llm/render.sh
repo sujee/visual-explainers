@@ -69,10 +69,10 @@ for d in a b c; do for a in 16x9 9x16; do
   [[ -s thumbnails/$NAME-thumbnail-$d-$a.png ]] || { echo "thumbnail $d $a failed, see $TMP/thumb_*.log" >&2; exit 1; }
 done; done
 
-# YouTube descriptions, with chapters taken from the landscape timeline (so they always match the video).
-# Tracked in Git and rewritten by every render.
+# YouTube publishing guide: upload steps + descriptions, with chapters taken from the landscape timeline
+# (so they always match the video). Tracked in Git and rewritten by every render.
 uv run --frozen python src/youtube.py "$TMP/events_landscape.json" "$TMP/events_portrait.json" \
-  > youtube-description.md
+  > youtube-publishing.md
 
 ln -sfn "$VER" workspace/preview/latest
 ls -la "$OUT"

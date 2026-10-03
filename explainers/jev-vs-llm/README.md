@@ -28,7 +28,7 @@ From the existing source. This reproduces the approved video exactly.
 
 ```bash
 ./render.sh            # → workspace/preview/<timestamp>/  (4K landscape ~2:05 + Short ~0:36, with and without music,
-                       #    and rewrites thumbnails/ (3 designs per format) and youtube-description.md)
+                       #    and rewrites thumbnails/ (3 designs per format) and youtube-publishing.md)
 ./render.sh draft      # quick 720p draft, both formats → workspace/preview/<timestamp>/
 ./render.sh draft v5   # same, named version            → workspace/preview/v5/
 ./render.sh final v5   # everything, final quality      → workspace/preview/v5/
@@ -64,7 +64,7 @@ Then iterate on drafts as below. Git still has the approved version: `git restor
 
    Or run `./render.sh final v3` yourself. This takes a while: 4K, both formats.
 
-**Or edit the code directly:** `src/scene.py` (one method per beat, `b_title` … `b_end`; colors and the example ticket, options and probabilities are at the top; the section titles are in `SECTIONS`), `src/music.py`, or `src/youtube.py` (the description text; chapter times come from the render); thumbnails are `JevThumbnail` at the end of `src/scene.py`, then run `./render.sh draft <next version>`.
+**Or edit the code directly:** `src/scene.py` (one method per beat, `b_title` … `b_end`; colors and the example ticket, options and probabilities are at the top; the section titles are in `SECTIONS`), `src/music.py`, or `src/youtube.py` (the YouTube publishing guide and descriptions; chapter times come from the render); thumbnails are `JevThumbnail` at the end of `src/scene.py`, then run `./render.sh draft <next version>`.
 
 ## Verify before committing
 

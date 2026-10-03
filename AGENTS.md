@@ -34,7 +34,7 @@ Start a new explainer by copying [`templates/explainer/`](templates/explainer/) 
 
 - `brief.md`: write it first (see Iteration Workflow).
 - `README.md`: the entry point for people and agents. Keep its structure and keep it short; prefer commands over prose.
-- `render.sh`: the Render Interface below (arguments, output folders, file names, with and without music) is already in place. Fill in the TODOs: installing dependencies, rendering the video, rendering the music and, if the brief asks for them, the YouTube description and thumbnails.
+- `render.sh`: the Render Interface below (arguments, output folders, file names, with and without music) is already in place. Fill in the TODOs: installing dependencies, rendering the video, rendering the music and, if the brief asks for them, the YouTube publishing guide and thumbnails.
 
 ## Reproducibility
 
@@ -77,7 +77,7 @@ The brief's **Deliverables** says which videos to make and how long; these specs
 
 - **Vertical:** recompose the layout rather than cropping the 16:9 version; share content and animation logic where practical. Keep text and key visuals clear of the platform UI: roughly the bottom 15% and the right edge.
 - **Audio:** produce each video with music and silent (for remixers adding voiceover or their own track). Music must be original or redistributable; generating it deterministically in code is a good default. Normalize to about −14 LUFS integrated, true peak ≤ −1 dBTP.
-- **YouTube description** (when the brief asks for one): `render.sh` writes it to `youtube-description.md` in the explainer directory (tracked, rewritten by every render), with chapter timestamps taken from the render's own timeline so they always match the video. YouTube only shows chapters if the first starts at 0:00, there are at least three, and each is at least 10 seconds; check this when generating it. Attribute sources and credit the way the video does.
+- **YouTube publishing guide** (when the brief asks for one): `render.sh` writes `youtube-publishing.md` in the explainer directory (tracked, rewritten by every render): step-by-step upload instructions (the full video first, then the Short, which links to it; then link them both ways and update the READMEs) followed by a description for each video. Chapter timestamps come from the render's own timeline so they always match the video. YouTube only shows chapters if the first starts at 0:00, there are at least three, and each is at least 10 seconds; check this when generating it. Attribute sources and credit the way the video does.
 - **Thumbnails** (when the brief asks for them): `render.sh` renders them as stills to `thumbnails/<explainer>-thumbnail-<design>-<aspect>.png` in the explainer directory (tracked, so they can be shared without rendering; rewritten by every render): 1280×720 for 16:9 and 1080×1920 for 9:16, each under 2 MB. Big type and one simple picture, readable at phone size; keep key content away from the bottom-right corner, where YouTube overlays the duration.
 - **Attribution:** end with a short, understated card showing the credit from the brief's **Credit** section. No Credit section, no card. Keep it easy for remixers to change or remove; don't add technical measures to enforce it.
 

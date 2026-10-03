@@ -40,10 +40,10 @@ render_thumbnails() {  # YouTube thumbnail stills: thumbnails/<name>-thumbnail-<
   echo "TODO: render_thumbnails in render.sh" >&2; exit 1
 }
 
-render_description() {  # write youtube-description.md, with chapter timestamps from this render's
-                        # own timeline (see AGENTS.md). Delete this, and its call below, if the
-                        # brief doesn't ask for a YouTube description.
-  echo "TODO: render_description in render.sh" >&2; exit 1
+render_publishing() {  # write youtube-publishing.md: upload steps and descriptions, with chapter
+                       # timestamps from this render's own timeline (see AGENTS.md). Delete this, and
+                       # its call below, if the brief doesn't ask for a YouTube publishing guide.
+  echo "TODO: render_publishing in render.sh" >&2; exit 1
 }
 
 for f in "${FORMATS[@]}"; do
@@ -57,7 +57,7 @@ for f in "${FORMATS[@]}"; do
 done
 
 render_thumbnails
-render_description
+render_publishing
 
 ln -sfn "$VER" workspace/preview/latest
 ls -la "$OUT"
