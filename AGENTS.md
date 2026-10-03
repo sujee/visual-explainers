@@ -112,7 +112,7 @@ prefill-vs-decode-v5-9x16-4k.mp4
 
 ## What Not to Commit
 
-`workspace/`, generated videos and renders, `node_modules/`, `.venv/`, caches, large intermediates, unused generated assets, secrets and `.env` files, and AI conversation transcripts. Final masters are archived externally and published to platforms such as YouTube.
+`workspace/`, generated videos and renders, `node_modules/`, `.venv/`, caches, large intermediates, unused generated assets, secrets and `.env` files, and AI conversation transcripts. Final masters are archived externally and published to platforms such as YouTube (and attached to a GitHub release). The exceptions are the small publishing files `render.sh` writes outside `workspace/`, `thumbnails/` and `youtube-publishing.md`: they are tracked so they can be shared without rendering.
 
 ## Iteration Workflow
 
@@ -140,6 +140,18 @@ Once approved, turn the explainer directory into a **Repro Bundle**:
 When finished, report: files to commit, files that must not be committed, the exact commands to reproduce, and any remaining external requirements or limitations.
 
 An explainer is done when it communicates the goals of `brief.md`, the user has approved it, the bundle checks above pass, and someone with only the repository can reproduce and remix it.
+
+## Known Pitfalls
+
+Lessons from earlier explainers; check these before they cost a draft.
+
+- **Don't overwrite the human's edits.** Before writing or regenerating a file, check `git status`/`git diff` for changes you didn't make. Generated-but-tracked files (`youtube-publishing.md`, `thumbnails/`) are rewritten by every render, so carry any hand edit into the source that generates them (or ask) first.
+- **Look at frames, not just exit codes.** A render that succeeds can still have clipped, overlapping or wrapped text. Check both formats, including a full-size frame, not only a contact sheet.
+- **Lay out each format for itself.** A layout designed for 16:9 ends up small and top-heavy in 9:16. Build each scene's layout, then scale it to fill that format's safe area.
+- **Manim text:** small `font_size` values get uneven letter spacing (render larger and scale down). Pango wraps `Text` at the frame's *pixel* width, so large text can wrap in a 720p draft but not in the 4K final; widen the layout box while building text, or build one `Text` per line. Run Manim with `--media_dir` under `workspace/tmp/` (or through `render.sh`), or it writes a `media/` folder into the explainer.
+- **Manim animation:** in a `Succession`, animating a submobject after its parent has moved can drop the rest of the group (text vanished from pills). Prefer `MoveAlongPath` or separate `play` calls.
+- **Music should sit behind the visuals.** Busy or building tracks felt distracting; keep it level and simple unless the brief says otherwise. You can't hear it: check loudness, the waveform and a spectrogram, and say it's unverified by ear.
+- **YouTube chapters:** each must last at least 10 seconds by the listed timestamps, or YouTube shows none. Generate them from the render's timeline and check the rule there.
 
 ## Remixing
 
