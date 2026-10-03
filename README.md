@@ -10,6 +10,8 @@ Open-source, reproducible visual explainers for AI, software, and technical conc
 
 The code and templates are under [Apache-2.0](LICENSE). The original videos and soundtracks are licensed under [CC BY 4.0](LICENSE-CONTENT). If you build something cool with it, a link back to this project is always appreciated, but not required for the code.
 
+Note: some videos / content may not by fully open source.  Check the notes.
+
 ## Working with Agents
 
 [AGENTS.md](AGENTS.md)
