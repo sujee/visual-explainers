@@ -50,5 +50,6 @@ All the videos are in one [YouTube playlist](https://www.youtube.com/playlist?li
 
 | Explainer | What it teaches | Watch | Built with |
 |---|---|---|---|
+| [jev-vs-llm](explainers/jev-vs-llm/) | Jev, TypeSafe AI's "System One" model, vs. a chat LLM - typed decisions with calibrated probabilities instead of text | [Video](https://youtu.be/RQ6f6z-dPWA) · [Short](https://youtube.com/shorts/Iv2K_rx5Jso) | Manim (Python) |
 | [neural-network-training](explainers/neural-network-training/) | How a network learns - forward pass, error, backpropagation, weight updates | [Video](https://youtu.be/BJC3FuMHRvs) · [Short](https://youtube.com/shorts/0fBcojHo-SI) · [4K release](https://github.com/sujee/visual-explainers/releases/tag/neural-network-training-v1) | Manim (Python) |
 | [neural-network-training-cartoon](explainers/neural-network-training-cartoon/) | The same explainer in a bright cartoon style, with a bouncy soundtrack | [Video](https://youtu.be/11BqOZ9HJeY) ·   [Short](https://youtube.com/shorts/wK1GNcRc8jY) · [4K release](https://github.com/sujee/visual-explainers/releases/tag/neural-network-training-cartoon-v1) | Manim (Python) |
