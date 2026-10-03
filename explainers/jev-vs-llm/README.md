@@ -6,7 +6,7 @@ The intent (what it teaches, for whom, and what must come across) is in [brief.m
 
 Working with a coding agent? The house rules are in [AGENTS.md](../../AGENTS.md) at the repository root: read it first.
 
-▶ Watch the finished explainer: [video](https://youtu.be/RQ6f6z-dPWA) · [Short](https://youtube.com/shorts/Iv2K_rx5Jso)
+▶ Watch the finished explainer: [video](https://youtu.be/RQ6f6z-dPWA) · [Short](https://youtube.com/shorts/Iv2K_rx5Jso) · Download the 4K masters: [release](https://github.com/sujee/visual-explainers/releases/tag/jev-vs-llm-v1)
 
 ## Prerequisites
 

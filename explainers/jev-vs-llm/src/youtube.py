@@ -118,7 +118,7 @@ Upload the full video first, because the Short links to it.
 
 - `README.md`: replace "coming soon" with the video and Short links.
 - Root `README.md`: add a row to the Explainers table.
-- Optional: a GitHub release `{NAME}-v1` with the four 4K masters from `workspace/preview/<version>/`.
+- A GitHub release `{NAME}-v1` with the four 4K masters from `workspace/preview/<version>/`, linked from both READMEs.
 
 ---
 
