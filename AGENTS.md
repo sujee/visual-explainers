@@ -8,7 +8,7 @@ Each explainer is a self-contained project that anyone — a developer, CI, or a
 
 ## Core Principles
 
-1. **Start at the explainer's `README.md`, then its brief.** The README says how to run it and points to `brief.md`, which uses the headings Goal / Audience / Story (optional) / Must communicate / Style / Constraints / Deliverables / Credit / Creative freedom. Story lists fixed story beats, when the explainer needs them; Deliverables either points to the defaults in this file or states how they differ; Credit gives the end-card text; Creative freedom is one line, so the brief still works if it's handed to an agent on its own. A brief deliberately does not prescribe scenes: even a Story gives beats, not a scene-by-scene script.
+1. **Start at the explainer's `README.md`, then its brief.** The README says how to run it and points to `brief.md`, which uses the headings Goal / Audience / Story (optional) / Must communicate / Style / Constraints (optional) / Deliverables / Credit / Creative freedom. Story lists fixed story beats, when the explainer needs them; Deliverables says what to make (formats and lengths); Credit gives the end-card text; Creative freedom is one line. A brief is self-contained: it says *what* to make and works if it's handed to an agent on its own, while this file says *how* every explainer is produced (see Technical Specs). A brief deliberately does not prescribe scenes: even a Story gives beats, not a scene-by-scene script.
 2. **Exercise creative freedom.** Treat the brief as goals, not a script. You decide the visual metaphors, story, structure, animation, pacing, typography, and layout. Prefer visuals over text, and don't ask the user to specify every creative decision.
 3. **The source is the final storyboard.** No separate scene-by-scene script unless an explainer truly needs one. `brief.md` captures intent, the approved source captures the final creative decisions, and Git captures their evolution.
 4. **Be agent-agnostic.** Don't depend on previous conversations, hidden prompts, agent-specific context (Claude, OpenCode, Hermes, …), or files outside the project.
@@ -34,7 +34,7 @@ Start a new explainer by copying [`templates/explainer/`](templates/explainer/) 
 
 - `brief.md`: write it first (see Iteration Workflow).
 - `README.md`: the entry point for people and agents. Keep its structure and keep it short; prefer commands over prose.
-- `render.sh`: the Render Interface below (arguments, output folders, file names, with and without music) is already in place. Fill in the TODOs: installing dependencies, rendering the video and rendering the music.
+- `render.sh`: the Render Interface below (arguments, output folders, file names, with and without music) is already in place. Fill in the TODOs: installing dependencies, rendering the video, rendering the music and, if the brief asks for them, the YouTube description and thumbnails.
 
 ## Reproducibility
 
@@ -66,18 +66,20 @@ Plain `./render.sh` must render every deliverable at final quality — reproduci
 ./render.sh final v5   # everything, final quality → workspace/preview/v5/
 ```
 
-## Deliverables
+## Technical Specs
 
-Unless `brief.md` says otherwise:
+The brief's **Deliverables** says which videos to make and how long; these specs apply to every one of them.
 
-| Format | Aspect | Master resolution | Frame rate | For |
-|---|---|---|---|---|
-| Landscape | 16:9 | 3840×2160 | 30 fps | YouTube, archival |
-| Vertical / Short | 9:16 | 2160×3840 | 30 fps | YouTube Shorts, vertical platforms |
+| Format | Aspect | Master resolution | Frame rate |
+|---|---|---|---|
+| Landscape | 16:9 | 3840×2160 | 30 fps |
+| Vertical / Short | 9:16 | 2160×3840 | 30 fps |
 
-- **Vertical:** recompose the layout rather than cropping the 16:9 version; share content and animation logic where practical. Aim for 40–60 seconds (best practice, not a hard limit — YouTube Shorts allow up to 3 minutes). Keep text and key visuals clear of the platform UI: roughly the bottom 15% and the right edge.
+- **Vertical:** recompose the layout rather than cropping the 16:9 version; share content and animation logic where practical. Keep text and key visuals clear of the platform UI: roughly the bottom 15% and the right edge.
 - **Audio:** produce each video with music and silent (for remixers adding voiceover or their own track). Music must be original or redistributable; generating it deterministically in code is a good default. Normalize to about −14 LUFS integrated, true peak ≤ −1 dBTP.
-- **Attribution:** end with a short, understated card showing the credit from the brief's **Credit** section (for the original explainers here, **Created by sujee.dev**). No Credit section, no card. Keep it easy for remixers to change or remove; don't add technical measures to enforce it.
+- **YouTube description** (when the brief asks for one): `render.sh` writes it to `youtube-description.md` in the explainer directory (tracked, rewritten by every render), with chapter timestamps taken from the render's own timeline so they always match the video. YouTube only shows chapters if the first starts at 0:00, there are at least three, and each is at least 10 seconds; check this when generating it. Attribute sources and credit the way the video does.
+- **Thumbnails** (when the brief asks for them): `render.sh` renders them as stills to `thumbnails/<explainer>-thumbnail-<design>-<aspect>.png` in the explainer directory (tracked, so they can be shared without rendering; rewritten by every render): 1280×720 for 16:9 and 1080×1920 for 9:16, each under 2 MB. Big type and one simple picture, readable at phone size; keep key content away from the bottom-right corner, where YouTube overlays the duration.
+- **Attribution:** end with a short, understated card showing the credit from the brief's **Credit** section. No Credit section, no card. Keep it easy for remixers to change or remove; don't add technical measures to enforce it.
 
 ## Workspace and Output
 

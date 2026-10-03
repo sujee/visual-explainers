@@ -24,11 +24,9 @@ Curious non-experts. No math.
 Simpson's cartoon style. Motion should explain, not decorate. Plain-language captions.
 Music: bouncy, cartoon style.
 
-## Constraints
-- About 2 minutes; the Short under 60 seconds.
-
 ## Deliverables
-The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables).
+- Landscape 16:9, about 2 minutes.
+- Short 9:16, under 60 seconds: a condensed version of the full story.
 
 ## Credit
 End card: **Created by sujee.dev**. Short and understated.

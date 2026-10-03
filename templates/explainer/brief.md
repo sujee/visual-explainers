@@ -20,11 +20,13 @@
 <Tone and look in a line or two, e.g. "Technical but approachable. Prefer visuals over text.">
 
 ## Constraints
-- <Anything that shapes the story, e.g. "Show a wrong answer before the right one.">
-- <Target length, e.g. "About 60 seconds.">
+<Optional. Anything that shapes the story, e.g. "Show a wrong answer before the right one." Delete this section if there's nothing to add.>
 
 ## Deliverables
-The standard deliverables are in [AGENTS.md](../../AGENTS.md#deliverables). <Or state how they differ, e.g. "16:9 only, no Short.">
+- Landscape 16:9, about <2 minutes>.
+- Short 9:16, about <40–60 seconds>: <a condensed version of the full story, or a standalone cut of one idea>. <Delete this line for no Short.>
+- YouTube description for each video, with chapter timestamps. <Delete this line if not needed.>
+- YouTube thumbnails: <a few designs> for each video. <Delete this line if not needed.>
 
 ## Credit
 End card: **Created by <your name or site>**. Short and understated. Delete this section for no credit.

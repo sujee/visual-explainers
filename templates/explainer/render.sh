@@ -35,6 +35,17 @@ render_music() {  # <format> <out.wav>: the music track, matching that format's 
   echo "TODO: render_music in render.sh" >&2; exit 1
 }
 
+render_thumbnails() {  # YouTube thumbnail stills: thumbnails/<name>-thumbnail-<design>-<aspect>.png (tracked)
+                       # (see AGENTS.md). Delete this, and its call below, if the brief doesn't ask for them.
+  echo "TODO: render_thumbnails in render.sh" >&2; exit 1
+}
+
+render_description() {  # write youtube-description.md, with chapter timestamps from this render's
+                        # own timeline (see AGENTS.md). Delete this, and its call below, if the
+                        # brief doesn't ask for a YouTube description.
+  echo "TODO: render_description in render.sh" >&2; exit 1
+}
+
 for f in "${FORMATS[@]}"; do
   base=$OUT/$NAME-$VER-$f-$RES
   render_video "$f" "$TMP/video_$f.mp4"
@@ -44,6 +55,9 @@ for f in "${FORMATS[@]}"; do
   ffmpeg -v error -y -i "$base-silent.mp4" -i "$TMP/music_$f.wav" -map 0:v -map 1:a \
     -c:v copy -af apad -c:a aac -b:a 256k -shortest -movflags +faststart "$base.mp4"
 done
+
+render_thumbnails
+render_description
 
 ln -sfn "$VER" workspace/preview/latest
 ls -la "$OUT"
